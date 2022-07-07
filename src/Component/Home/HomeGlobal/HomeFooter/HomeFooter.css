@@ -1,0 +1,22 @@
+.home-footer{
+    display: flex;
+    justify-content: space-around;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+    border-top: 1px solid #4f3f39;
+}
+.home-footer-joinus{
+    display: flex;
+    flex-direction: column;
+    
+}
+.home-footer-joinus-heading{
+    color: #4f3f39;
+    font-family: 'Amatic SC', cursive;
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+}
+.home-footer-joinus-icon{
+    display: flex;
+    justify-content: space-around;
+    padding-left: 2rem;
+}

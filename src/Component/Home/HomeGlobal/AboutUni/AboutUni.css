@@ -1,0 +1,28 @@
+.about-uni{
+    background-color: #dadbdd;
+    height: 25rem;
+    display: flex;
+    color: #4f3f39;
+    padding-top: 2rem;
+}
+.about-uni-text{
+    width: 50%;
+}
+.about-uni-image{
+    width: 50%;
+}
+.about-uni-image img{
+    width: 90%;
+    height: 21rem;
+    margin-top: 2rem;
+}
+.about-uni-text h2{
+    font-family: 'Amatic SC', cursive;
+    font-size: 2.5rem;
+    font-weight: 200;
+}
+.about-uni-text p{
+    font-family: 'Indie Flower', cursive;
+    width: 32rem;
+    margin: auto;
+}

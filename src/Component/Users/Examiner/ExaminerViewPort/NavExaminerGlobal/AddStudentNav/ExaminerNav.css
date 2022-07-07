@@ -1,0 +1,32 @@
+.addStudent-nav{
+    box-shadow: 0 8px 8px -4px lightblue;
+    height: 6rem;
+    width: 85rem;
+
+    display: flex;
+    justify-content: space-between;
+}
+.addStudent-nav-logo{
+    display: flex;
+}
+.addStudent-nav-icon{
+    cursor: pointer ;
+}
+.addStudent-nav-icon img{
+    width: 8rem;
+    cursor: pointer;
+
+}
+.addStudent-nav-logo-text{
+    margin-left: -2rem;
+
+}
+.addStudent-nav-logo-text p{
+    margin-top: -1rem;
+}
+
+.addStudent-nav-logout{
+    margin-top: 2rem;
+    margin-right: 3rem;
+    cursor: pointer;
+}

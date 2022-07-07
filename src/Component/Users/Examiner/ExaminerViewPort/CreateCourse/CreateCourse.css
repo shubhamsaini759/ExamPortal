@@ -1,0 +1,15 @@
+.create-course-heading h2{
+    padding-top: 2rem;
+    color: #4f3f39;
+}
+.create-course{
+    height: 30rem;
+    width: 40rem;
+    margin: auto;
+    box-shadow: 0 0 5px 5px lightblue;
+}
+.create-course-details-data{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}

@@ -1,0 +1,19 @@
+.examiner{
+    display: flex;
+}
+.examiner-left{
+    width: 20rem;
+    height: 100vh;
+}
+.examiner-viewPort{
+    width: 70rem;
+    height: 33rem;
+    overflow: hidden;
+    
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+::-webkit-scrollbar{
+    display: none;
+}

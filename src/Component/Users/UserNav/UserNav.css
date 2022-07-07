@@ -1,0 +1,27 @@
+.admin-nav{
+    box-shadow: 0 8px 8px -4px lightblue;
+    height: 6rem;
+    width: 70rem;
+
+    display: flex;
+    justify-content: space-between;
+}
+.admin-nav-logo{
+    display: flex;
+}
+.admin-nav-icon img{
+    width: 8rem;
+}
+.admin-nav-logo-text{
+    margin-left: -2rem;
+
+}
+.admin-nav-logo-text p{
+    margin-top: -1rem;
+}
+
+.admin-nav-logout{
+    margin-top: 2rem;
+    margin-right: 3rem;
+    cursor: pointer;
+}

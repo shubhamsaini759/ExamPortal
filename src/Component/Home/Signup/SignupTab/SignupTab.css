@@ -1,0 +1,23 @@
+.signup-tab{
+    background-image: url('../../../../Assets/Global/laptop3.jpg');
+    height: 35rem;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.signup-tab-data{
+    width: 50rem;
+    height: 30rem;
+    margin-left: 2rem;
+}
+.signup-tab-data-input h5{
+    font-family: 'Patrick Hand', cursive;
+    font-size: 25px;
+
+}
+.signup-tab-data-input{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: auto;
+}

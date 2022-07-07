@@ -1,0 +1,45 @@
+
+.request-examiner{
+    box-shadow: 0px 8px 5px -4px lightblue;
+
+    width: 60rem;
+    height: 5rem;
+    margin: 0px auto;
+
+    display: flex;
+    justify-content: space-between;
+}
+.request-heading h2{
+    color: #4f3f39;
+}
+
+
+.request-detail{
+    display: flex;
+    align-items: center ;
+
+}
+
+.request-detail-image img{
+    cursor: pointer;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    margin-left: 2rem;
+}
+.request-detail-data{
+    margin-left: 1rem;
+}
+.request-detail-btn{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-right: 2rem;
+    width: 6rem;
+}
+.request-detail-btn .done{
+    cursor: pointer;
+}
+.request-detail-btn .cancel{
+    cursor: pointer;
+}

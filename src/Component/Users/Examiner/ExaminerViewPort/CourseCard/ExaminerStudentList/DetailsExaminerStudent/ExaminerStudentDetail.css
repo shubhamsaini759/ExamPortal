@@ -1,0 +1,45 @@
+.Examiner-student{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    color: #4f3f39;
+}
+.Exmainer-student-data{
+    box-shadow: 0 0 5px 5px lightblue;
+    height: 6rem;
+    width: 40rem;
+
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+}
+.Exmainer-student-data-detail{
+    display: flex;
+}
+.Exmainer-student-data-course{
+    display: flex;
+    align-items: center;
+}
+.Exmainer-student-data-course h4{
+    margin-right: 1rem;
+
+}
+.Exmainer-student-data-img{
+    height: 5.5rem;
+    width: 5.5rem;
+    border-radius: 50%;
+    margin-top: 0.2rem;
+    margin-left: 1rem;
+    overflow: hidden;
+
+}
+.Exmainer-student-data-img img{
+    height: 5.5rem;
+    width: 5.5rem;
+}
+.Exmainer-student-data-info{
+    margin-left: 1rem;
+}

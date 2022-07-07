@@ -1,0 +1,33 @@
+.login-tab{
+    background-image: url('../../../../Assets/Global/laptop.jpg');
+    height: 35rem;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.login-tab-data{
+    width: 50rem;
+    height: 30rem;
+    margin-left: 2rem;
+}
+.login-tab-data-input h5{
+    font-family: 'Patrick Hand', cursive;
+    font-size: 25px;
+
+}
+.login-tab-data-input{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: auto;
+}
+.login-tab-data-info{
+    margin-left: -32rem;
+}
+
+.forgot span{
+    cursor: pointer;
+}
+.create-account span{
+    cursor: pointer;
+}

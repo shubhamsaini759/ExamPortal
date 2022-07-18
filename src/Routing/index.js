@@ -54,7 +54,6 @@ const Routing = () => {
         <Route path='/student/result' element={<Student />} />
 
 
-
         
     </Routes>
   );

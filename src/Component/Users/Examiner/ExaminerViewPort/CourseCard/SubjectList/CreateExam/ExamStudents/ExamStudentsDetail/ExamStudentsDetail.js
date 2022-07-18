@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './ExamStudentsDetail.css'
 import DoneIcon from '@mui/icons-material/Done';
 
@@ -6,40 +6,78 @@ import img from '../../../../../../../../../Assets/Global/laptop.jpg'
 import { Button } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 
-const ExamStudentsDetail = () => {
+import api from '../../../../../../../../../Utils/api'
+import { useDispatch, useSelector } from 'react-redux';
+import { ExamStudentAction } from '../../../../../../../../../Store/Index';
+import { toast } from 'react-toastify';
+
+const ExamStudentsDetail = (props) => {
 
     const navigate = useNavigate();
+    const dispatch = useDispatch();
 
-    const [ check, setCheck ] = useState(false);
+    const Time = useSelector(state => state.ExamTimeReducer)
+    const questions  = props.question;
+    const studentId = useSelector( state => state.ExamStudentReducer )
 
-    const checkHandler = () =>{
-        setCheck(true)
+    const [ studentList , setStudentList ] = useState([]);
+
+
+    const checkHandler = (x) =>{
+        dispatch(ExamStudentAction.AddStudent({ student : x }))
     }
+
+    const studentHandler =() =>{
+        console.log(Time,questions,studentId)
+        const body = {
+            ...Time,
+            questions:questions,
+            students:studentId.students
+        }
+        console.log(body,'body')
+        api 
+            .post('/examiner/exam',body,{ headers : { Authorization : `${localStorage.getItem('accessToken')}`}})
+            .then((result)=>{
+                toast(result.data.message)
+                navigate('/examiner/dashboard')
+
+            })
+            .catch((err)=>console.log(err,'examcreatedone'))
+
+    }
+    useEffect(()=>{
+        api
+            .get('/examiner/students/' + props.courseID,{ headers : { Authorization : `${localStorage.getItem('accessToken')}`}})
+            .then((result)=>{
+                setStudentList(result.data.data.students)
+            })
+            .catch((err)=>console.log(err,'examStudentList'))
+    },[])
 
   return (
     <div className='exam-student'>
         <div className='exam-student-done'>
-            <Button variant='contained' onClick={()=>navigate('/examiner/dashboard')} >Done</Button>
+            <Button variant='contained' onClick={studentHandler} >Done</Button>
         </div>
         <div className='exam-student-heading'>
             <h2>Students List</h2>
         </div>
-        <div className='exam-student-detail'>
-            <div className='exam-student-detail-data'>
-                <div className='exam-student-detail-img'>
-                    <img src={img} alt='img' /> 
+        { studentList.map((x)=>
+            <div className='exam-student-detail'>
+                <div className='exam-student-detail-data'>
+                    <div className='exam-student-detail-img'>
+                        <img src={img} alt='img' /> 
+                    </div>
+                    <div className='exam-student-detail-info'>
+                        <h4>{x.name}</h4>
+                        <p>{x.email}</p>
+                    </div>
                 </div>
-                <div className='exam-student-detail-info'>
-                    <h4>student name</h4>
-                    <p>student@gmail.com</p>
+                <div className='exam-student-detail-btn'>
+                    <Button variant='outlined' onClick={()=>checkHandler(x._id)}>ADD</Button> 
                 </div>
             </div>
-            <div className='exam-student-detail-btn'>
-                { !check ? <Button variant='outlined' onClick={checkHandler}>ADD</Button> : <DoneIcon /> }
-            </div>
-          
-        </div>
-
+        )}
     </div>
   )
 }

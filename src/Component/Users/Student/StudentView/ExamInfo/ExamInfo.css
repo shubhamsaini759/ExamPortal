@@ -1,0 +1,26 @@
+.exam-info{
+    width: 100%;
+    height: 100%;
+}
+.exam-info-box{
+    width: 60rem;
+    height: 10rem;
+    margin: auto;
+    margin-top: 2rem;
+
+    box-shadow: 0 0 5px 5px lightblue;
+    display: flex ;
+    justify-content: space-around;
+    align-items: center;
+    overflow: scroll;
+
+}
+.exam-info-time{
+    box-shadow: 0 0 5px 5px lightblue;
+
+    height: 8rem;
+    width: 20rem;
+    margin-left: 1rem;
+
+}
+

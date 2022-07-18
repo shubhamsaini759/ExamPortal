@@ -37,9 +37,9 @@ const ExaminerSide = (props) => {
                 <div className='dashboard-user'>
                     <div className='request-icon'>
                         <StickyNote2Icon />
-                        <Button variant="text" onClick={()=>navigate('/examiner/createcourse')} >Craete Course</Button>
+                        <Button variant="text" onClick={()=>navigate('/examiner/createcourse')} >Create Course</Button>
                     </div>
-                    <div className='exam-detail'>
+                    <div className='exam-icon'>
                         <AutoStoriesIcon />
                         <Button variant="text" onClick={()=>navigate('/examiner/examdetails')} >Exam Details</Button>
                     </div>

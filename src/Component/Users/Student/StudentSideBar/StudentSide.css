@@ -1,39 +1,38 @@
-.examiner-side{
+.student-side{
     box-shadow: 0 8px 8px 4px lightblue;
     z-index: 1;
     height: 40rem;
 }
-.examiner-side-data{
+.student-side-data{
     border-bottom: 0.5px solid grey;
 }
-.examiner-side-image img{
+.student-side-image img{
     margin-top: 3rem;
     width: 10rem;
     border-radius: 50%;
     height: 10rem;
 }
-.examiner-side-data p span{
+.student-side-data p span{
     padding-top: 5rem;
     padding-left: 3rem;
 }
 
-.examiner-side-dashboard p{
+.student-side-dashboard p{
     color: #4f3f39;
     text-align: start;
     padding-left: 1rem;
     cursor: pointer;
 }
 
-.dashboard-user{
+.student-dashboard-user{
     display: flex;
     flex-direction: column;
 }
-.request-icon{
+.student-request-icon{
     display: flex;
     align-items: center;
 }
-.exam-icon{
+.student-approved-icon{
     display: flex;
     align-items: center;
 }
-

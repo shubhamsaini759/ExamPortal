@@ -8,7 +8,7 @@ import PeopleAltIcon from '@mui/icons-material/PeopleAlt';
 import LibraryBooksIcon from '@mui/icons-material/LibraryBooks';
 
 import img from '../../../../../Assets/Global/student2.jpg'
-
+import Tooltip from '@mui/material/Tooltip';
 import { useNavigate } from 'react-router-dom'
 
 const Courses = (props) => {
@@ -35,10 +35,19 @@ const Courses = (props) => {
                   <p> {x.description} </p>
               </div>
               <div className='course-card-icons'>
-                  <PersonAddAlt1Icon className='AddPerson' sx={{ fontSize : 30,m : 2,color : '#4f3f39' }} onClick={()=>navigate('/examiner/addstudent',{state : {courseId : x._id}})}  /> 
-                  <PeopleAltIcon className='ViewPerson' sx={{ fontSize : 30,m : 2,color : '#4f3f39'}} onClick={()=>navigate('/examiner/studentlist',{state : {courseId : x._id}})}  /> 
-                  <BookmarkAddIcon className='AddSubject' sx={{ fontSize : 30,m : 2,color : '#4f3f39'}} onClick={()=>navigate('/examiner/addsubject',{state : {courseId : x._id}})} /> 
-                  <LibraryBooksIcon className='ViewSubject' sx={{ fontSize : 30,m : 2,color : '#4f3f39'}} onClick={()=>navigate('/examiner/subjectlist',{state : {courseId : x._id}})} /> 
+                  <Tooltip title="Add Student" placement="bottom-end">
+                        <PersonAddAlt1Icon className='AddPerson' sx={{ fontSize : 30,m : 2,color : '#4f3f39' }} onClick={()=>navigate('/examiner/addstudent',{state : {courseId : x._id}})}  /> 
+                  </Tooltip>
+
+                  <Tooltip title="Student List" placement="bottom-end">
+                        <PeopleAltIcon className='ViewPerson' sx={{ fontSize : 30,m : 2,color : '#4f3f39'}} onClick={()=>navigate('/examiner/studentlist',{state : {courseId : x._id}})}  /> 
+                  </Tooltip>
+                  <Tooltip title="Add Subject" placement="bottom-end">
+                        <BookmarkAddIcon className='AddSubject' sx={{ fontSize : 30,m : 2,color : '#4f3f39'}} onClick={()=>navigate('/examiner/addsubject',{state : {courseId : x._id}})} /> 
+                  </Tooltip>
+                  <Tooltip title="Subject List" placement="bottom-end">
+                        <LibraryBooksIcon className='ViewSubject' sx={{ fontSize : 30,m : 2,color : '#4f3f39'}} onClick={()=>navigate('/examiner/subjectlist',{state : {courseId : x._id}})} /> 
+                  </Tooltip>
               </div>
             </div>
         )}

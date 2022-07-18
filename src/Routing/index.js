@@ -16,6 +16,10 @@ import CreateExam from "../Component/Users/Examiner/ExaminerViewPort/CourseCard/
 import ExamQuestions from "../Component/Users/Examiner/ExaminerViewPort/CourseCard/SubjectList/CreateExam/ExamQue/ExamQuestions";
 import ExamStudents from "../Component/Users/Examiner/ExaminerViewPort/CourseCard/SubjectList/CreateExam/ExamStudents/ExamStudents";
 import ExamDetail from "../Component/Users/Examiner/ExaminerViewPort/ExamDetail/ExamDetail";
+import ExamAllDetail from "../Component/Users/Examiner/ExaminerViewPort/ExamDetail/ExamAllDetail/ExamAllDetail";
+import QuePaper from "../Component/Users/Examiner/ExaminerViewPort/ExamDetail/ExamAllDetail/QuePaper/QuePaper";
+import ShowQuestion from "../Component/Users/Examiner/ExaminerViewPort/CourseCard/SubjectList/CreateExam/ExamQue/CreateQuetions/ShowQuestion/ShowQuestion";
+import Student from "../Component/Users/Student/Student";
 
 const Routing = () => {
   return (
@@ -32,16 +36,24 @@ const Routing = () => {
 
         <Route  path="/examiner/dashboard" element={<Examiner />} />
         <Route  path="/examiner/createcourse" element={<Examiner />} />
-        <Route path="/examiner/coursesubject" element={<AddCourseSubject />} />
+        <Route  path="/examiner/coursesubject" element={<AddCourseSubject />} />
         <Route  path="/examiner/addstudent" element={<AddStudent />} />
-        <Route path="/examiner/studentlist" element={<ExaminerStudentList />} />
+        <Route  path="/examiner/studentlist" element={<ExaminerStudentList />} />
         <Route  path="/examiner/addsubject" element={<AddSubject />} />
         <Route  path="/examiner/subjectlist" element={<SubjectList />} />
-        <Route path="/examiner/subjectlist/createexam" element={<CreateExam /> } />
-        <Route path="/examiner/subjectlist/exam/questions" element={<ExamQuestions /> } />
-        <Route path="/examiner/subjectlist/exam/students" element={<ExamStudents /> } />
-
+        <Route  path="/examiner/subjectlist/createexam" element={<CreateExam /> } />
+        <Route  path="/examiner/subjectlist/exam/questions" element={<ExamQuestions /> } />
+        <Route  path="/examiner/subjectlist/exam/showquestions" element={<ShowQuestion /> } />
+        <Route  path="/examiner/subjectlist/exam/students" element={<ExamStudents /> } />
         <Route path='/examiner/examdetails' element={<ExamDetail /> } />
+        <Route path='/examiner/examalldetail' element={<ExamAllDetail /> } />
+        <Route path='/examiner/examdetail/quepaper' element={ <QuePaper /> } />
+
+        <Route path='/student/dashboard' element={ <Student /> } />
+        <Route path='/student/viewexam' element={<Student /> } />
+        <Route path='/student/result' element={<Student />} />
+
+
 
         
     </Routes>

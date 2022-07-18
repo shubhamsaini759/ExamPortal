@@ -23,7 +23,7 @@ const SubjectList = () => {
   return (  
     <>
         <ExaminerNav />
-        <SubjectListDetail list={list}/>        
+        <SubjectListDetail list={list} />        
     </>
 
     )

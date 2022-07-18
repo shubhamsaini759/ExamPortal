@@ -1,0 +1,53 @@
+.exam-detail{
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    color: #4f3f39;
+}
+.exam-detail-back{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+}
+.exam-detail-back p{
+    cursor: pointer;
+    margin-left: 1rem;
+
+}
+.exam-deatil-card{
+    width: 60rem;
+    height: 8rem;
+    margin-top: 1rem;
+
+    box-shadow: 0 0 5px 5px lightblue;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.exam-detail-img{
+    width: 8rem;
+    height: 8rem;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.exam-detail-img img{
+    width: 8rem;
+    height: 8rem;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.exam-detail-card-info{
+    margin-left: 1rem;
+}
+.exam-detail-schedual{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 20rem;
+}

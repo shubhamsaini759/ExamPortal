@@ -46,6 +46,8 @@ const LoginTab = () => {
                               navigate('/admin');
                             }else if(result.data.data.userType === "EXAMINER"){
                               navigate('/examiner/dashboard');
+                            }else if(result.data.data.userType === "STUDENT"){
+                              navigate('/student/dashboard')
                             }
           })
           .catch((err)=>{

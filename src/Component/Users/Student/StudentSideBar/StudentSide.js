@@ -34,7 +34,7 @@ const StudentSide = (props) => {
                 <div className='student-dashboard-user'>
                     <div className='student-request-icon'>
                         <ReceiptIcon />
-                        <Button  variant="text" onClick={()=>navigate('/student/viewexam')} >Exam Deatils</Button>
+                        <Button  variant="text" onClick={()=>navigate('/student/viewexam')} >Exam Details</Button>
                     </div>
                     <div className='student-approved-icon'>
                         <FeedIcon />

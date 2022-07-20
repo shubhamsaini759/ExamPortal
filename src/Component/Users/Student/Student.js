@@ -26,11 +26,18 @@ const Student = () => {
 
    useEffect(()=>{
 
+    api 
+      .get('/student/dashboard',{ headers : { Authorization : `${localStorage.getItem('accessToken')}`}})
+      .then((result)=>{
+        setStudent(result.data.data.student)
+
+      })
+      .catch((err) => err,'error')
+
     if( path === 'dashboard'){
       api
           .get('/student/dashboard',{ headers : { Authorization : `${localStorage.getItem('accessToken')}`}})
           .then((result)=>{
-            setStudent(result.data.data.student)
             setExam(result.data.data.student.exams)
             toast(result.data.message)
 
@@ -39,16 +46,15 @@ const Student = () => {
     } 
     else if( path === 'viewexam'){
       api
-      .get('/student/dashboard',{ headers : { Authorization : `${localStorage.getItem('accessToken')}`}})
+      .get('/student/exams',{ headers : { Authorization : `${localStorage.getItem('accessToken')}`}})
       .then((result)=>{
-        setStudent(result.data.data.student)
-        setApply(result.data.data.student.exams)
+        setApply(result.data.data.exams)
         toast(result.data.message)
 
       })
       .catch((err) => err,'error')
     }
-    },[])
+    },[path])
 
   return (
     <>

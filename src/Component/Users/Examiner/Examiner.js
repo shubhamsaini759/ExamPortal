@@ -19,7 +19,7 @@ const Examiner = () => {
     const path = pathname.split("/")[2];
 
     useEffect(()=>{
-
+console.log("render");
         if(path === 'dashboard'){
             api
             .get('/examiner/dashboard',{headers : {Authorization : `${localStorage.getItem('accessToken')}`}})

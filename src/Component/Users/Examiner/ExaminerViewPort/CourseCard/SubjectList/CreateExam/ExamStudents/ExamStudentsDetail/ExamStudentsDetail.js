@@ -18,21 +18,25 @@ const ExamStudentsDetail = (props) => {
 
     const Time = useSelector(state => state.ExamTimeReducer)
     const questions  = props.question;
-    const studentId = useSelector( state => state.ExamStudentReducer )
+    // const studentId = useSelector( state => state.ExamStudentReducer )
 
     const [ studentList , setStudentList ] = useState([]);
+    const [ checkList, setCheckList ] = useState([]);
+    
 
 
-    const checkHandler = (x) =>{
-        dispatch(ExamStudentAction.AddStudent({ student : x }))
+    const checkHandler = (i) =>{
+        setCheckList(checkList.map((v,ind)=> i===ind?!v:v ))
+        // dispatch(ExamStudentAction.AddStudent({ student : x }))
     }
 
     const studentHandler =() =>{
-        console.log(Time,questions,studentId)
+        const studentIds = studentList.filter((v,ind)=>checkList[ind]).map((v)=>v._id);
+        console.log(Time,questions,studentIds)
         const body = {
             ...Time,
             questions:questions,
-            students:studentId.students
+            students:studentIds
         }
         console.log(body,'body')
         api 
@@ -45,11 +49,15 @@ const ExamStudentsDetail = (props) => {
             .catch((err)=>console.log(err,'examcreatedone'))
 
     }
+
     useEffect(()=>{
+    
         api
             .get('/examiner/students/' + props.courseID,{ headers : { Authorization : `${localStorage.getItem('accessToken')}`}})
             .then((result)=>{
-                setStudentList(result.data.data.students)
+                let std = result.data.data.students;
+                setStudentList(result.data.data.students);
+                setCheckList(Array(std.length).fill(false));
             })
             .catch((err)=>console.log(err,'examStudentList'))
     },[])
@@ -62,7 +70,7 @@ const ExamStudentsDetail = (props) => {
         <div className='exam-student-heading'>
             <h2>Students List</h2>
         </div>
-        { studentList.map((x)=>
+        { studentList.map((x,i)=>
             <div className='exam-student-detail'>
                 <div className='exam-student-detail-data'>
                     <div className='exam-student-detail-img'>
@@ -74,7 +82,8 @@ const ExamStudentsDetail = (props) => {
                     </div>
                 </div>
                 <div className='exam-student-detail-btn'>
-                    <Button variant='outlined' onClick={()=>checkHandler(x._id)}>ADD</Button> 
+                    <input type='checkbox' checked={checkList[i]} onClick={()=>checkHandler(i)}/>
+                    {/* <Button variant='outlined' onClick={()=>checkHandler(x._id)}>ADD</Button>  */}
                 </div>
             </div>
         )}

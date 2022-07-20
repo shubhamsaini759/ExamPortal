@@ -1,0 +1,35 @@
+.answer{
+    width: 100%;
+    height: 100%;
+
+}
+.answer-box{
+    margin: auto;
+    margin-top: 2rem;
+    width: 70rem;
+
+    
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+.answer-option{
+    width: 100%;
+}
+.answer-box1{
+    width: 50%;
+    display: flex;
+    align-items: start;
+
+
+}
+.answer-box2{
+    width: 50%;
+    display: flex;
+    align-items: start;
+
+    margin-top: 2rem;
+}
+#op{
+    margin-left: 20rem;
+}

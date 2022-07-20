@@ -20,6 +20,7 @@ import ExamAllDetail from "../Component/Users/Examiner/ExaminerViewPort/ExamDeta
 import QuePaper from "../Component/Users/Examiner/ExaminerViewPort/ExamDetail/ExamAllDetail/QuePaper/QuePaper";
 import ShowQuestion from "../Component/Users/Examiner/ExaminerViewPort/CourseCard/SubjectList/CreateExam/ExamQue/CreateQuetions/ShowQuestion/ShowQuestion";
 import Student from "../Component/Users/Student/Student";
+import ExamStudentQue from "../Component/Users/Student/StudentView/ExamInfo/ExamQue/ExamStudentQue";
 
 const Routing = () => {
   return (
@@ -53,8 +54,8 @@ const Routing = () => {
         <Route path='/student/viewexam' element={<Student /> } />
         <Route path='/student/result' element={<Student />} />
 
+        <Route path='/student/viewexam/examque' element={<ExamStudentQue />} />
 
-        
     </Routes>
   );
 };

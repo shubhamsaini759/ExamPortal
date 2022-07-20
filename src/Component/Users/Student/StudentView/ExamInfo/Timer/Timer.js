@@ -5,8 +5,14 @@ import getDaysToGo from 'get-days-to-go'
 const Timer = (props) => {
     const [timer, setTimer] = useState({});
 
-    
-    setInterval(()=>setTimer(getDaysToGo(props.date)),1000)
+    const todayDate = new Date(props.date).getTime();
+    const todayHrs = parseInt(props.hours.split(':')[0]) * 3600000;
+    const todayMin = parseInt(props.hours.split(':')[1]) * 60000; 
+
+
+    setInterval(()=>{
+        setTimer(getDaysToGo(new Date(todayDate + todayHrs + todayMin)))
+    },1000)
 
   return (
     <table className='exam-info-time-detail'>

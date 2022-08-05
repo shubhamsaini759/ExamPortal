@@ -50,7 +50,7 @@ const AddCourseSubject = (props) => {
         }
 
         api
-          .post('/examiner/subjects',{subjects:Arr},{headers : { Authorization : `${ localStorage.getItem('accessToken')}`}})
+          .post('/examiner/addSubjects',{subjects:Arr},{headers : { Authorization : `${ localStorage.getItem('accessToken')}`}})
           .then((result)=>{
                 toast(result.data.message);
                 navigate('/examiner/dashboard')

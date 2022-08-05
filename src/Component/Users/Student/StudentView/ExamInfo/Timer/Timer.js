@@ -5,13 +5,9 @@ import getDaysToGo from 'get-days-to-go'
 const Timer = (props) => {
     const [timer, setTimer] = useState({});
 
-    const todayDate = new Date(props.date).getTime();
-    const todayHrs = parseInt(props.hours.split(':')[0]) * 3600000;
-    const todayMin = parseInt(props.hours.split(':')[1]) * 60000; 
-
-
+    const todayDate = (new Date(`${props.date.split("T")[0]} ${props.hours.split(':')[0]}:${props.hours.split(':')[1]}:00`)).getTime() + 5 * 3600000 + 1800000
     setInterval(()=>{
-        setTimer(getDaysToGo(new Date(todayDate + todayHrs + todayMin)))
+        setTimer(getDaysToGo(todayDate))
     },1000)
 
   return (
@@ -24,9 +20,9 @@ const Timer = (props) => {
         </tr>
         <tr>
             <td>{timer.days}</td>
-            <td>{timer.hrs }</td>
-            <td>{timer.mins}</td>
-            <td>{timer.secs}</td>
+            <td>{timer.hours }</td>
+            <td>{timer.minutes}</td>
+            <td>{timer.seconds}</td>
         </tr>
     </table>
   )

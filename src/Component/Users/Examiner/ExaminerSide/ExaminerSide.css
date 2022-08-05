@@ -37,3 +37,8 @@
     align-items: center;
 }
 
+
+.result-icon{
+    display: flex;
+    align-items: center;
+}

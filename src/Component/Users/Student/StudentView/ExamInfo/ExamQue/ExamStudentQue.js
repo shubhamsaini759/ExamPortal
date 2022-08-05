@@ -2,6 +2,7 @@ import React from 'react'
 import { useLocation } from 'react-router-dom'
 import ExaminerNav from '../../../../Examiner/ExaminerViewPort/NavExaminerGlobal/AddStudentNav/ExaminerNav';
 import AnswerSheet from './AnswerSheet/AnswerSheet';
+import QueAns from './QueAns/QueAns';
 
 
 
@@ -14,7 +15,8 @@ const ExamStudentQue = () => {
             <ExaminerNav />
         </div>
         <div className='paper-sheet'>
-            <AnswerSheet paper={location.state.paper} />
+          <QueAns ID={location.state} />
+            {/* <AnswerSheet paper={location.state.paper} /> */}
         </div>
     </div>
   )

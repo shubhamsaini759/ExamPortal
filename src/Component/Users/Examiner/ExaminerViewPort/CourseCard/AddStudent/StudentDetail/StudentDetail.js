@@ -59,7 +59,7 @@ const StudentDetail = (props) => {
       e.preventDefault();
 
       api
-        .post('/examiner/student',{...studentData, courseID : props.courseId },{headers : { Authorization : `${localStorage.getItem('accessToken')}`}})
+        .post('/examiner/createStudent',{...studentData, courseID : props.courseId },{headers : { Authorization : `${localStorage.getItem('accessToken')}`}})
         .then((result)=>{
                         alert(result.data.message)
                         navigate('/examiner/dashboard')

@@ -12,6 +12,7 @@ import Results from './StudentView/Results/Results'
 
 import api from '../../../Utils/api'
 import { toast } from 'react-toastify'
+import ExamRecords from './StudentView/ExamRecords/ExamRecords'
 
 const Student = () => {
 
@@ -21,6 +22,7 @@ const Student = () => {
    const [ student, setStudent ] = useState([]);
    const [ exam, setExam ] = useState([]);
    const [ apply, setApply ] = useState([]);
+   const [ records, setRecords ] = useState([]);
 
 
 
@@ -38,7 +40,7 @@ const Student = () => {
       api
           .get('/student/dashboard',{ headers : { Authorization : `${localStorage.getItem('accessToken')}`}})
           .then((result)=>{
-            setExam(result.data.data.student.exams)
+            setExam(result.data.data.student.studentexams)
             toast(result.data.message)
 
           })
@@ -48,11 +50,23 @@ const Student = () => {
       api
       .get('/student/exams',{ headers : { Authorization : `${localStorage.getItem('accessToken')}`}})
       .then((result)=>{
-        setApply(result.data.data.exams)
+        setApply(result.data.data.studentexams)
         toast(result.data.message)
 
       })
       .catch((err) => err,'error')
+    }
+    else if(path === 'examrecords'){
+      api
+      .get('/student/examRecords',{ headers : { Authorization : `${localStorage.getItem('accessToken')}`}})
+      .then((result)=>{
+        console.log(result.data.data)
+        setRecords(result.data.data.studentexams)
+        toast(result.data.message)
+
+      })
+      .catch((err) => err,'error')
+
     }
     },[path])
 
@@ -67,9 +81,12 @@ const Student = () => {
             <UserNav />
           </div>
           <div className="student-viewPort">
+            {/* { path === 'dashboard' && <StudentDashboard examDetail={exam} /> } */}
             { path === 'dashboard' && <StudentDashboard examDetail={exam} /> }
             { path === 'viewexam' && <ExamInfo apply={apply} /> }
             { path === 'result' && <Results /> }
+            { path === 'examrecords' && <ExamRecords records={records} /> }
+
           </div>
         </div>
       </div>
@@ -81,3 +98,9 @@ const Student = () => {
 }
 
 export default Student
+
+
+
+
+
+

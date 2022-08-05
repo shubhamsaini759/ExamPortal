@@ -12,20 +12,20 @@ const ExaminerStudentList = () => {
    const location = useLocation();
 
    const [ studentList, setStudentList ] = useState([]);
-
+   const [refresh, setRefresh] = useState(false);
    useEffect(()=>{
          api   
-            .get(`examiner/students/${location.state.courseId}`,{headers : { Authorization : `${localStorage.getItem('accessToken')}`}})
+            .get('examiner/courseStudents?courseID=' + location.state.courseId,{headers : { Authorization : `${localStorage.getItem('accessToken')}`}})
             .then((result)=>{
                               setStudentList(result.data.data.students)
                            })
             .catch((err)=>console.log(err,'studentList'))
-   },[])
+   },[refresh])
 
   return (
      <>
         <ExaminerNav />
-        <ExaminerStudentDetail students={studentList} />
+        <ExaminerStudentDetail setRefresh={setRefresh} students={studentList} />
      </>
 
   )

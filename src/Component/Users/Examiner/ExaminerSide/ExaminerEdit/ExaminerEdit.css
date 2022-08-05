@@ -1,0 +1,19 @@
+
+.examiner-edit-heading h2{
+    color: #4f3f39;
+}
+.examiner-edit-detail{
+   border: px solid black;
+   display: flex;
+   justify-content: center;
+  
+  
+}
+.examiner-edit-detail-box{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+.examiner-edit-detail span{
+    font-size: smaller;
+}

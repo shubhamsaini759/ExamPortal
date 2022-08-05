@@ -34,7 +34,7 @@ const store = configureStore({
         ExamTimeReducer : ExamTimeSlice.reducer,
         ExamQueReducer : ExamQueSlice.reducer,
         ExamStudentReducer : ExamStudentSlice.reducer,
-        ViewExamReducer : ViewExamSlice.reducer
+        ViewExamReducer : ViewExamSlice.reducer,
 
     }
 })

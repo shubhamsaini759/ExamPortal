@@ -18,8 +18,11 @@ const Examiner = () => {
     const { pathname } = useLocation();
     const path = pathname.split("/")[2];
 
+    const [refresh , setRefresh ] = useState(false);
+
+
     useEffect(()=>{
-console.log("render");
+// console.log("render");
         if(path === 'dashboard'){
             api
             .get('/examiner/dashboard',{headers : {Authorization : `${localStorage.getItem('accessToken')}`}})
@@ -36,7 +39,7 @@ console.log("render");
 
 
 
-    },[])
+    },[refresh])
   
 
 
@@ -52,7 +55,7 @@ console.log("render");
                   <UserNav />
               </div>
               <div className='examiner-viewPort'>
-               { path === 'dashboard' && <Courses courses={courses} />}
+               { path === 'dashboard' && <Courses setRefresh={setRefresh} courses={courses} />}
                 { path === 'createcourse' && <CreateCourse /> }
                     
               </div>

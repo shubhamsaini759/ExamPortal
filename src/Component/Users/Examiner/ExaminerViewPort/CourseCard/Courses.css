@@ -1,3 +1,13 @@
+.course-card-top{
+    display: flex;
+}
+.course-card-dlt{
+    color: #4f3f39;
+    cursor: pointer;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
 .course-heading h2{
     color: #4f3f39;
 }
@@ -15,6 +25,8 @@
     display: flex;
     align-items:center ;
     flex-direction: column;
+
+    position: relative;
 
     box-shadow: 0 0 5px 5px lightblue;
 }

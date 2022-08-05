@@ -26,7 +26,7 @@ const CreateCourse = () => {
     const CreateCourse = (e) =>{
         e.preventDefault();
         api 
-            .post('/examiner/course',courseDetail,{ headers : { Authorization : `${localStorage.getItem('accessToken')}`}})
+            .post('/examiner/createCourse',courseDetail,{ headers : { Authorization : `${localStorage.getItem('accessToken')}`}})
             .then((result)=> {
                                 alert(result.data.message);
                                 navigate('/examiner/coursesubject',{state : {courseId : result.data.data.course._id}});

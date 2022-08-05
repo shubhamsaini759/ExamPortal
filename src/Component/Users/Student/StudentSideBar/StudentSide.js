@@ -40,6 +40,10 @@ const StudentSide = (props) => {
                         <FeedIcon />
                         <Button  variant="text" onClick={()=>navigate('/student/result')} >Results</Button>
                     </div>
+                    <div className='student-record-icon'>
+                        <FeedIcon />
+                        <Button  variant="text" onClick={()=>navigate('/student/examrecords')} >Exam Records</Button>
+                    </div>
                    
                 </div>
             </div>

@@ -1,0 +1,19 @@
+
+.admin-edit-heading h2{
+    color: #4f3f39;
+}
+.admin-edit-detail{
+   border: px solid black;
+   display: flex;
+   justify-content: center;
+  
+  
+}
+.admin-edit-detail-box{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+.admin-edit-detail span{
+    font-size: smaller;
+}

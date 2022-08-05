@@ -3,33 +3,45 @@
     height: 100%;
 
 }
+.box{
+    display: flex;
+    border-top: 1px solid black;
+}
 .answer-box{
     margin: auto;
     margin-top: 2rem;
-    width: 70rem;
+    margin-left: 2rem;
+    width: 100%;
 
     
     display: flex;
     flex-direction: column;
-    align-items: start;
+    
+}
+.answer-que{
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-items: left;
+
+    font-weight: bold;
 }
 .answer-option{
-    width: 100%;
-}
-.answer-box1{
-    width: 50%;
     display: flex;
-    align-items: start;
-
-
+    flex-direction: column;
+    margin-left: 1rem;
 }
-.answer-box2{
-    width: 50%;
-    display: flex;
-    align-items: start;
-
+.answer-page-btn{
+    display: grid;
+    justify-content: space-around;
+    grid-template-columns: auto auto auto;
+    margin-right: 2rem;
+    margin-left: 2rem;
     margin-top: 2rem;
+
 }
-#op{
-    margin-left: 20rem;
+.page-btm-border{
+    border-left: 2px solid black;   
+    height: 100vh;
+
 }

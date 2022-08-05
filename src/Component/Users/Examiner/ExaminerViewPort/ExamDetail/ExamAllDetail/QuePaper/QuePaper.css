@@ -4,6 +4,7 @@
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+
 }
 .que-paperdetail-back{
     width: 100%;
@@ -19,6 +20,8 @@
     margin-top: 2rem;
     width: 100%;
     margin-left: 4rem;
+    position: relative;
+
 }
 .que-paperdetail-que{
     display: flex;
@@ -53,4 +56,14 @@
 .que-paperdetail-correct span{
     font-weight: 600;
     margin-left: 1rem;
+}
+.que-paperdetai-delete{
+    position: absolute;
+    top: 1;
+    right: 0;
+
+    margin-right: 5rem;
+}
+.que-paperdetai-delete{
+    cursor: pointer;
 }

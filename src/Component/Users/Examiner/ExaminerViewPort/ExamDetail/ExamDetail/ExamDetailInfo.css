@@ -42,12 +42,15 @@
     border-radius: 50%;
     object-fit: cover;
 }
-.exam-detail-card-info{
+/* .exam-detail-card-info{
     margin-left: 1rem;
-}
+} */
 .exam-detail-schedual{
     display: flex;
     align-items: center;
     justify-content: space-between;
     width: 20rem;
+}
+.exam-detail-delete{
+    cursor: pointer;
 }

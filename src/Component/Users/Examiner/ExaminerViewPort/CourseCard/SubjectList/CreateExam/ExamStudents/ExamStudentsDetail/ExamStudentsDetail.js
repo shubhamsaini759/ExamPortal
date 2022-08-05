@@ -32,6 +32,7 @@ const ExamStudentsDetail = (props) => {
 
     const studentHandler =() =>{
         const studentIds = studentList.filter((v,ind)=>checkList[ind]).map((v)=>v._id);
+        // const studentIds = studentList.map(x => x._id);
         console.log(Time,questions,studentIds)
         const body = {
             ...Time,
@@ -40,7 +41,7 @@ const ExamStudentsDetail = (props) => {
         }
         console.log(body,'body')
         api 
-            .post('/examiner/exam',body,{ headers : { Authorization : `${localStorage.getItem('accessToken')}`}})
+            .post('/examiner/createExam',body,{ headers : { Authorization : `${localStorage.getItem('accessToken')}`}})
             .then((result)=>{
                 toast(result.data.message)
                 navigate('/examiner/dashboard')
@@ -50,10 +51,11 @@ const ExamStudentsDetail = (props) => {
 
     }
 
+
     useEffect(()=>{
     
         api
-            .get('/examiner/students/' + props.courseID,{ headers : { Authorization : `${localStorage.getItem('accessToken')}`}})
+            .get('/examiner/courseStudents?courseID='+ props.courseID,{ headers : { Authorization : `${localStorage.getItem('accessToken')}`}})
             .then((result)=>{
                 let std = result.data.data.students;
                 setStudentList(result.data.data.students);

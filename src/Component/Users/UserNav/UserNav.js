@@ -5,6 +5,7 @@ import logo from '../../../Assets/Global/U.png'
 
 import LogoutIcon from '@mui/icons-material/Logout';
 import { useNavigate } from 'react-router-dom';
+import { Tooltip } from '@mui/material';
 
 
 const UserNav = () => {
@@ -29,7 +30,9 @@ const UserNav = () => {
             </div>    
         </div>
         <div className='admin-nav-logout'>
-              <LogoutIcon onClick={logoutHandler} />
+          <Tooltip title="Logout" placement="bottom-end">
+                <LogoutIcon onClick={logoutHandler} />
+          </Tooltip>
         </div>
 
     </div>

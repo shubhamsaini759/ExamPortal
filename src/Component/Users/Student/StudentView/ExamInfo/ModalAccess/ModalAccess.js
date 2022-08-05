@@ -23,9 +23,10 @@ const ModalAccess = (props) => {
     props.onConfirm();
 
     api
-      .post('/student/exam',ids,{ headers : { Authorization : `${localStorage.getItem('accessToken')}`}})
+      .post('/student/accessExam',ids,{ headers : { Authorization : `${localStorage.getItem('accessToken')}`}})
       .then((result)=> {
-        navigate('/student/viewexam/examque',{state : { paper : result.data.data}})
+        // navigate('/student/viewexam/examque',{state : { paper : result.data.data}})
+        navigate('/student/viewexam/examintsruction',{state : {studentID : result.data.data.studentID,examID:result.data.data.exam.examID}});
       })
       .catch((err)=>console.log(err,'access'))
   };

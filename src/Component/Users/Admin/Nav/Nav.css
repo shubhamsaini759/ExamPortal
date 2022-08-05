@@ -1,0 +1,30 @@
+.nav{
+    box-shadow: 0 8px 8px -4px lightblue;
+    height: 6rem;
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+}
+.nav-logo{
+    display: flex;
+}
+.nav-icon{
+    cursor: pointer;
+}
+.nav-icon img{
+    width: 8rem;
+}
+.nav-logo-text{
+    margin-left: -2rem;
+
+}
+.nav-logo-text p{
+    margin-top: -1rem;
+}
+
+.nav-logout{
+    margin-top: 2rem;
+    margin-right: 3rem;
+    cursor: pointer;
+}

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './Courses.css'
 
 
@@ -6,14 +6,20 @@ import BookmarkAddIcon from '@mui/icons-material/BookmarkAdd';
 import PersonAddAlt1Icon from '@mui/icons-material/PersonAddAlt1';
 import PeopleAltIcon from '@mui/icons-material/PeopleAlt';
 import LibraryBooksIcon from '@mui/icons-material/LibraryBooks';
+import DeleteIcon from '@mui/icons-material/Delete';
 
 import img from '../../../../../Assets/Global/student2.jpg'
 import Tooltip from '@mui/material/Tooltip';
 import { useNavigate } from 'react-router-dom'
+import DeleteAlert from './CourseDelete/DeleteAlert';
+
+
 
 const Courses = (props) => {
 
       const navigate = useNavigate();
+
+      
 
   return (
 
@@ -27,8 +33,14 @@ const Courses = (props) => {
         { props.courses.map((x)=>
 
             <div className='course-card'>
-              <div className='course-card-img'>
-                  <img src={img} alt='image' />
+                <div className='course-card-top'>
+                    <div className='course-card-img'>
+                        <img src={img} alt='image' />
+                    </div>
+                    <div className='course-card-dlt'>
+                        {/* <DeleteIcon onClick={deleteHandler} /> */}
+                        <DeleteAlert setRefresh={props.setRefresh} courseID={x._id} />
+                    </div>
               </div>
               <div className='course-card-text'>
                   <h3>{x.name}</h3>

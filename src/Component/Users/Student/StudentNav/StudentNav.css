@@ -1,0 +1,32 @@
+.student-nav{
+    box-shadow: 0 8px 8px -4px lightblue;
+    height: 6rem;
+    width: 85rem;
+
+    display: flex;
+    justify-content: space-between;
+}
+.student-nav-logo{
+    display: flex;
+}
+.student-nav-icon{
+    cursor: pointer ;
+}
+.student-nav-icon img{
+    width: 8rem;
+    cursor: pointer;
+
+}
+.student-nav-logo-text{
+    margin-left: -2rem;
+
+}
+.student-nav-logo-text p{
+    margin-top: -1rem;
+}
+
+.student-nav-logout{
+    margin-top: 2rem;
+    margin-right: 3rem;
+    cursor: pointer;
+}

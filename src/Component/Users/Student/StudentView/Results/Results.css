@@ -1,0 +1,21 @@
+.student-result{
+    width: 100%;
+    height: 100vh;
+}
+.student-result-heading{
+    color: #4f3f39;
+}
+.student-result-detail{
+    width: 100%;
+    /* border: 1px solid black; */
+
+}
+/* .student-result-detail{
+    border: 1px solid black;
+} */
+/* .student-result-table-heading tr{
+    border: 1px solid black;
+} */
+/* .student-result-table-data {
+    border: 1px solid black;
+} */

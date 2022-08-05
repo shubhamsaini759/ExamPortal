@@ -9,12 +9,17 @@ import { useNavigate } from 'react-router-dom'
 import PersonAddAltIcon from '@mui/icons-material/PersonAddAlt';
 import GroupIcon from '@mui/icons-material/Group';
 import PersonOffIcon from '@mui/icons-material/PersonOff';
-import { Button } from '@mui/material';
+import { Button, Tooltip } from '@mui/material';
+import EditIcon from '@mui/icons-material/Edit';
 
 
 
 const AdminSideBar = (props) => {
     const navigate = useNavigate();
+    
+    const editHandler = () =>{
+        navigate('/admin/edit',{state : { data : props.admin}})
+    }
 
   return (
     <div className='admin-side'>
@@ -25,7 +30,13 @@ const AdminSideBar = (props) => {
                         <img src={user} alt='userprofile' />
                 </div>  
                 <div className='admin-side-data'>
-                        <h4>{props.admin.firstName} {props.admin.lastName}</h4>
+                        <h4>{props.admin.firstName} {props.admin.lastName} <span>
+                        <Tooltip title="Edit Profile" placement="bottom-end">
+                            
+                            <EditIcon fontSize='small' sx={{ml:2,cursor : 'pointer' }} onClick={editHandler}/>
+                        </Tooltip>   
+                        </span> </h4>
+                        
                         <p>{props.admin.email}</p>
                 </div>
             </div>

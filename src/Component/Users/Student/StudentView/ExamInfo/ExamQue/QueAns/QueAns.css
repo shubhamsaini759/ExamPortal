@@ -1,0 +1,19 @@
+.que-ans{
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+    justify-content: space-between;
+}
+.que-ans-box{
+    margin-top: 2rem;
+    margin-left: 2rem;
+
+}
+.que-ans-btn{
+    margin-top: 10rem;
+}
+.que-ans-pageBtn{
+    margin-top: 3rem;
+    margin-right: 1rem;
+}

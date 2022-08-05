@@ -19,7 +19,7 @@ const AddSubjectDetail = () => {
     e.preventDefault();
       
     api
-      .post('examiner/subjects',{subjects: [subject]},{headers : { AuthoriZation : `${localStorage.getItem('accessToken')}`}})
+      .post('examiner/addSubjects',{subjects: [subject]},{headers : { AuthoriZation : `${localStorage.getItem('accessToken')}`}})
       .then((result)=>{
           toast(result.data.message);
           navigate('/examiner/dashboard');

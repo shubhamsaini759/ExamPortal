@@ -36,7 +36,7 @@ const LoginTab = () => {
         e.preventDefault();
         dispatch(LoaderAction.loadingHandler());
         api 
-          .post('/login',loginData)
+          .post('/user/login',loginData)
           .then((result)=>{toast(result.data.message)
                             localStorage.setItem("accessToken",result.data.data.accessToken)
                             dispatch(loginAction.loginHandler());

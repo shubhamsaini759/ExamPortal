@@ -74,7 +74,8 @@ const LoginTab = () => {
                                 sx={{width: 300, pb: 3}} 
                                 label='Password' 
                                 name='userPassword' 
-                                onChange={passHandler} 
+                                onChange={passHandler}
+                                type={password} 
                     />
                     <Button variant='contained'  
                                                   sx={{width: 200, }}
